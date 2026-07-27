@@ -1,0 +1,35 @@
+# Escala Equipe 9132 — versão 2.1
+
+Aplicativo PWA para consulta da escala fixa e fechamento de cargas, com sincronização pelo Google Sheets.
+
+## Alterações
+- Removido o botão Relatórios e todas as funções associadas.
+- Removida a seleção de mês da tela principal e da administração.
+- Mantido somente o seletor de turno na parte superior.
+- A escala usa sempre os dias 01 a 31, independentemente do mês.
+- Removida a função de copiar escala para outro mês.
+- O Apps Script migra automaticamente a escala mais recente para a referência fixa `FIXA`.
+
+Substitua o Apps Script, execute `configurarSistema`, publique uma nova versão da implantação e depois substitua os arquivos no GitHub.
+
+
+## Atualização 2.3 — Histórico e montagem automática de sábado
+
+- Exibe, ao lado de cada colaborador, a quantidade de sábados publicados trabalhados no ano, nos últimos 90 dias e no total.
+- Mostra o último sábado trabalhado e a quantidade de sábados consecutivos.
+- Permite selecionar os postos necessários para a hora extra.
+- A montagem automática usa somente os colaboradores marcados como disponíveis.
+- A distribuição prioriza quem trabalhou menos sábados, evita sequências quando possível, considera o posto da escala fixa e reduz repetição do último posto.
+- A escala gerada permanece como rascunho para revisão antes da publicação.
+- A cópia do sábado anterior considera somente escalas publicadas.
+
+### Como usar a montagem automática
+
+1. Escolha a data do sábado e o turno.
+2. Marque os colaboradores disponíveis.
+3. Selecione os postos necessários ou use **Carregar postos da escala fixa**.
+4. Clique em **Montar automaticamente**.
+5. Revise os nomes e postos.
+6. Salve como rascunho ou publique.
+
+> A contagem começa a partir das escalas de sábado que estiverem registradas na aba `Escala_Sabado_HE`. Sábados antigos que nunca foram cadastrados nessa aba não podem ser contabilizados automaticamente.
